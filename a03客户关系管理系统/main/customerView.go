@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"smallproject/a03客户关系管理系统/model"
-	"smallproject/a03客户关系管理系统/service"
+	"mygithub/smallproject/a03客户关系管理系统/model"
+	"mygithub/smallproject/a03客户关系管理系统/service"
 )
 
 //三: 调用层
@@ -138,7 +138,11 @@ func main() {
 		loop: true,
 	}
 	//实例化CustomerService, 用于存储客户信息
+	//service在当前包已调用各个方法,这里将它实例化即运行各个方法
 	customerView.customerService = service.NewCustomerService()
 	//显示菜单
 	customerView.mainMenu()
+	//========================================================
+	//"方法": 需要传参当前对象(结构体),为了能调用当前对象里的各个方法 	对象.方法名
+	//"函数": 包名.函数名
 }

@@ -1,6 +1,6 @@
 package service
 
-import "smallproject/a03客户关系管理系统/model"
+import "mygithub/smallproject/a03客户关系管理系统/model"
 
 //二: 业务层
 type CustomerService struct {
@@ -53,7 +53,8 @@ func (this *CustomerService) Delete(id int) bool {
 	if index == -1 {
 		return false
 	}
-	//集合里移除此元素???
+	//集合里移除此元素
+	//如index=2, list的数据:[0 2),即舍弃了2.	然后从index+1开始,将元素添加进list 	"..."表示重复添加
 	this.customers = append(this.customers[:index], this.customers[index+1:]...)
 	return true
 }
